@@ -1,8 +1,11 @@
 # data structure example with javascript 
 
 
-binary search tree -> bst/
-graph -> graph/
+### bst/
+> binary search tree
+
+### graph/
+> graph
 
 ## 실행
 spider monkey 로 실행하세요
