@@ -3,27 +3,25 @@ function mergeSort(items) {
 		return items;
 	}
 
-    	var middle = Math.floor(items.length / 2),
-            left   = items.slice(0, middle),
-	    right  = items.slice(middle);
+	var middle = Math.floor(items.length / 2);
+	var left   = items.slice(0, middle);
+	var right  = items.slice(middle);
 
 	return merge(mergeSort(left), mergeSort(right));
 }
 
 function merge(left, right){
-	var result  = [],
-	    il      = 0,
-	    ir      = 0;
+	var result = [];
 
-	while (il < left.length && ir < right.length){
-		if (left[il] < right[ir]){
-			result.push(left[il++]);
+	while (left.length && right.length) {
+		if (left[0] <= right[0]) {
+			result.push(left.shift());
 		} else {
-			result.push(right[ir++]);
+			result.push(right.shift());
 		}
 	}
 
-	return result.concat(left.slice(il)).concat(right.slice(ir));
+	return result.concat(left).concat(right);
 }
 
 var nums = [6,10,1,9,4,8,2,7,3,5];
